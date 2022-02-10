@@ -23,3 +23,32 @@ Alternatively, the TL;DR:
 ### Housekeeping.
  * Its always good practice to add a good `.gitignore` file to any new repository.   
  I used [gitignore.io](gitignore.io) to generate the ignore files in this repository.
+
+### Issues Getting Started
+Seeing this?
+
+```
+'pod install' command failed with an exception:
+
+ Cannot run program "pod" (in directory "/Users/svprdga/code/personal/kmm/Test/ios"): error=2, No such file or directory
+
+        
+
+        Possible reason: CocoaPods is not installed
+
+        Please check that CocoaPods v1.10 or above and cocoapods-generate plugin are installed.
+
+        
+
+        To check CocoaPods version type 'pod --version' in the terminal
+
+        
+
+        To install CocoaPods execute 'sudo gem install cocoapods'
+
+        To install cocoapod-generate execute 'sudo gem install cocoapods-generate'
+```
+
+There is an issue when building the project sometimes it will tell you the cocoapods is not installed when it, in fact, very much is -- this is not your problem, this is a permissions issue in Android Studio that [JetBrains is aware of](https://youtrack.jetbrains.com/issue/KT-50984#focus=Comments-27-5736461.0-0). Lucky for us, there is a simple enough fix/resolution.    
+  * Launch a terminal and execute the following command   
+    `chmod +x /Applications/Android\ Studio.app/Contents/bin/printenv`
